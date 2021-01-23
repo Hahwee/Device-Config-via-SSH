@@ -1,6 +1,7 @@
 import sys
 import subprocess
 
+#loops through IP list and confirms if ttargets are reachable
 def reach_ip(ipList):
 
     for ip in ipList:

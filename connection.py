@@ -5,8 +5,8 @@ import time
 import paramiko
 
 #checks if file and commands file exists
-credFile = "/creds"
-commandFile = "/commands"
+credFile = "/../tempFiles/creds"
+commandFile = "/../tempFiles/commands"
 
 if (os.path.isfile(os.getcwd() + credFile)):
     print("Creds file found")

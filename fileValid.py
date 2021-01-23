@@ -4,7 +4,7 @@ import sys
 
 def file_valid():
         
-    ipFile = "/ipFile"
+    ipFile = "/../tempFiles/ipFile"
 
     #Checks if file exists
     if(os.path.isfile(os.getcwd() + ipFile )):
@@ -18,9 +18,7 @@ def file_valid():
     contents = open(nameFile,'r')
     temp = contents.readlines()
     contents.close()
-    print(temp)
     
     return temp
 
 
-file_valid()
