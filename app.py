@@ -7,4 +7,11 @@ from threads import connect_threads
 
 
 if __name__ == '__main__':
-    print('helo')
+    
+    ipList = file_valid()
+
+    valid_ip_check(ipList)
+
+    reach_ip(ipList)
+
+    connect_threads(ipList, connect)

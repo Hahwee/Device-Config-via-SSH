@@ -22,7 +22,7 @@ else:
 
 
 #function to connect to ssh server and send commands
-def connect():
+def connect(ip):
 
     #global variables defined above
     global credFile
@@ -52,18 +52,22 @@ def connect():
 
         #sends commands to shell
         comFile = open(os.getcwd() + commandFile, 'r')
-        comFile.readlines()
+        commands = comFile.readline()
 
-        for command in comFile:
-            connection.send(command + "\n")
-            time.sleep(2)
-
+        #for command in commands:
+            #connection.send(command + "\n")
+            #time.sleep(2)
+        
+        print(commands)
+        stdInput, stdOutput, stdError = session.exec_command(commands)
+        
         tempFile.close()
         comFile.close()
 
-        response = connection.recv(65535)
-
-        print(response)
+        #response = connection.recv(65535)
+        
+        outputList = stdOutput.read().split(b"\n")
+        print(outputList)       
 
     except paramiko.AuthenticationException:
         print("There was an authentication error, Exiting...\n")
@@ -72,4 +76,3 @@ def connect():
 
     
    
-#connect()

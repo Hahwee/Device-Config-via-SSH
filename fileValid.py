@@ -8,10 +8,10 @@ def file_valid():
 
     #Checks if file exists
     if(os.path.isfile(os.getcwd() + ipFile )):
-        print("Exists")
+        print("IP file Exists")
         nameFile = os.getcwd() + ipFile
     else:
-        print("DNE")
+        print("IP file DNE")
         sys.exit()
 
     #If file exists, then read file and return contents
